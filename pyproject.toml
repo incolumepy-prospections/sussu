@@ -103,11 +103,7 @@ testpaths = ["tests"]
 requires = ["uv_build>=0.8.9,<0.9.0"]
 build-backend = "uv_build"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.uv.build-backend]
+module-root = "src"
+module-name = "sussu"
 
-[tool.setuptools]
-package-dir = { "" = "src" }
-
-[tool.uv.extra-build-dependencies]
-openai-whisper = ["pkg_resources"]
