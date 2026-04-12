@@ -21,5 +21,5 @@ if not logger.hasHandlers():
         show_path=True,
     )
 
-    handler.setFormatter(logging.Formatter(fmt="%(message)s", datefmt="[%H:%M]"))
+    handler.setFormatter(logging.Formatter(fmt="%(message)s", datefmt="[%H:%M:%S.%f %::z]"))
     logger.addHandler(handler)
