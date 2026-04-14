@@ -1,6 +1,6 @@
 [project]
 name = "sussu"
-version = "0.0.1"
+version = "0.1.0"
 description = "sussu"
 readme = "README.md"
 license = "MIT"
@@ -78,33 +78,13 @@ line-ending = "lf"
 [tool.ruff.lint.isort]
 known-first-party = ["sussu"]
 
-[tool.pyright]
-typeCheckingMode = "strict"
-pythonVersion = "3.11"
-include = ["src", 'tests']
-exclude = [
-    "**/venv",
-    "**/.venv",
-    "**/env",
-    "**/.env",
-    "**/node_modules",
-    "**/__pycache__",
-]
-venv = ".venv"
-venvPath = "."
-executionEnvironments = [{ root = "src" }]
-
 [tool.pytest.ini_options]
 addopts = "-s --color=yes --tb=short"
 pythonpath = ["src"]
 testpaths = ["tests"]
 
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
-[tool.setuptools]
-package-dir = { "" = "src" }
+[dependency-groups]
+dev = [
+    "ruff>=0.15.10",
+    "setuptools-rust>=1.12.1",
+]
